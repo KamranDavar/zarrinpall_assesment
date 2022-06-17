@@ -14,12 +14,15 @@ export default function dynamicForm() {
     return (
       <div>
         <h1>{data?.titleform}</h1>
-        <Form
-          onFinish={onFinish}
-        >
+        <Form onFinish={onFinish}>
           {data.field.map((item) => (
             <Field data={item} key={item.path} />
           ))}
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
         </Form>
       </div>
     );
